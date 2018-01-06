@@ -16,7 +16,7 @@ A Deep Convolutional Neural Network architecture based on CNN for Text Classific
 optional arguments:
   -h, --help            show this help message and exit
   --embedding_dim EMBEDDING_DIM
-                        Dimensionality of character embedding (default: 128)
+                        Dimensionality of character embedding (default: 300)
   --filter_sizes FILTER_SIZES
                         Comma-separated filter sizes (default: '3,4,5')
   --num_filters NUM_FILTERS
@@ -26,14 +26,16 @@ optional arguments:
   --dropout_keep_prob DROPOUT_KEEP_PROB
                         Dropout keep probability (default: 0.5)
   --batch_size BATCH_SIZE
-                        Batch Size (default: 64)
+                        Batch Size (default: 128)
   --num_epochs NUM_EPOCHS
                         Number of training epochs (default: 100)
   --evaluate_every EVALUATE_EVERY
                         Evaluate model on dev set after this many steps
-                        (default: 100)
+                        (default: 500)
   --checkpoint_every CHECKPOINT_EVERY
-                        Save model after this many steps (default: 100)
+                        Save model after this many steps (default: 1000)
+  --num_checkpoints NUM_CHECKPOINTS
+                        Maximum number of checkpoints saved (default: 3)
   --allow_soft_placement ALLOW_SOFT_PLACEMENT
                         Allow device soft device placement
   --noallow_soft_placement
