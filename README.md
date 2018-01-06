@@ -35,7 +35,7 @@ optional arguments:
   --checkpoint_every CHECKPOINT_EVERY
                         Save model after this many steps (default: 1000)
   --num_checkpoints NUM_CHECKPOINTS
-                        Maximum number of checkpoints saved (default: 3)
+                        Number of checkpoints to store (default: 3)
   --allow_soft_placement ALLOW_SOFT_PLACEMENT
                         Allow device soft device placement
   --noallow_soft_placement
