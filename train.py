@@ -10,7 +10,7 @@ import numpy as np
 
 from data_utils import IMDBDataset
 from text_cnn import TextCNN
-from tensorflow.contrib import learn
+import data_helpers
 
 # Parameters
 # ==================================================
@@ -56,17 +56,17 @@ x_shuff = X[shuffle_indices]
 y_shuff = Y[shuffle_indices]
 
 # Percentage of the training data to use for validation
-dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(y)))
+dev_sample_index = -1 * int(FLAGS.dev_sample_percentage * float(len(Y)))
 
 # Split train/test set
-idx = -1 * int(val_sample * float(len(Y)))
+idx = -1 * int(FLAGS.dev_sample_percentage * float(len(Y)))
 x_train, x_dev = x_shuff[:idx], x_shuff[idx:]
 y_train, y_dev = y_shuff[:idx], y_shuff[idx:]
-print("Train/Val split: {:d}/{:d}".format(len(y_train), len(y_val)))
+# print("Train/Val split: {:d}/{:d}".format(len(y_train), len(y_val)))
 
 vocab_size = 75099
 embedding_path = './data/embeddings.npy'
-embedding = utils.load_embeddings(embedding_path, vocab_size, embedding_dim)
+embedding = utils.load_embeddings(embedding_path, vocab_size, FLAGS.embedding_dim)
 print ("Embeddings loaded, Vocabulary Size: {:d}. Starting training ...".format(vocab_size))
 
 # Training
@@ -128,7 +128,7 @@ with tf.Graph().as_default():
         saver = tf.train.Saver(tf.global_variables(), max_to_keep=FLAGS.num_checkpoints)
 
         # Write vocabulary
-        vocab_processor.save(os.path.join(out_dir, "vocab"))
+        # vocab_processor.save(os.path.join(out_dir, "vocab"))
 
         # Initialize all variables
         sess.run(tf.global_variables_initializer())
