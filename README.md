@@ -8,7 +8,7 @@ A Deep Convolutional Neural Network architecture based on CNN for Text Classific
 - Download the [IMdB Movie Reviews](http://ai.stanford.edu/~amaas/data/sentiment/) and [GloVe](https://nlp.stanford.edu/projects/glove/) datasets.
 - Generate embeddings using: 
 
-`python3 embeddings.py -d data/glove.42B.300d.txt --npy_output data/embeddings.npy --dict_output data/vocab.pckl --dict_whitelist data/aclImdb/imdb.vocab`
+`python3 generate_embeddings.py -d data/glove.42B.300d.txt --npy_output data/embeddings.npy --dict_output data/vocab.pckl --dict_whitelist data/aclImdb/imdb.vocab`
 
 - Start training with `python3 train.py`
 
