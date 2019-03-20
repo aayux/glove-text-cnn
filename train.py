@@ -10,7 +10,7 @@ import numpy as np
 
 from data_utils import IMDBDataset
 from text_cnn import TextCNN
-import data_helpers
+
 
 # Parameters
 # ==================================================
