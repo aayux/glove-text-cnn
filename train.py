@@ -10,7 +10,7 @@ import numpy as np
 
 from data_utils import IMDBDataset
 from text_cnn import TextCNN
-import data_helpers
+
 
 # Parameters
 # ==================================================
@@ -169,7 +169,7 @@ with tf.Graph().as_default():
                 writer.add_summary(summaries, step)
 
         # Generate batches
-        batches = data_helpers.batch_iter(
+        batches = utils.batch_iter(
             list(zip(x_train, y_train)), FLAGS.batch_size, FLAGS.num_epochs)
         # Training loop. For each batch...
         for batch in batches:
